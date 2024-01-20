@@ -1,0 +1,12 @@
+.dropzone {
+  border: 2px dashed #cccccc;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #4caf50;
+  margin-top: 10px;
+}
