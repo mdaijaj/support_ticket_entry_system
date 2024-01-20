@@ -14,6 +14,11 @@ app.use(cookieParser());
 let routes=require('./route/index')
 app.use('/', routes);
 
+aap.get("/", (req, res)=>{
+    console.log("api is calling")
+    return res.send({message: "api is calling for testing.."})
+})
+
 app.listen(PORT, () => {
     console.log(`server started on port ${PORT}`);
 });
