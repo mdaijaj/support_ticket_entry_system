@@ -12,7 +12,7 @@ app.use(cors());
 app.use(cookieParser());
 
 
-app.get("/", (req, res)=>{
+app.get("/test", (req, res)=>{
     console.log("api is calling")
     return res.send({message: "api is calling for testing.."})
 })
