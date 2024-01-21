@@ -3,7 +3,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import "../App.css"
 
 
-const Navbar = (props) => {
+const Navbar = () => {
     const navigate = useNavigate()
     
     const handleLogout = () => {
