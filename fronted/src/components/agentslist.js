@@ -53,9 +53,9 @@ const Agent_List = (props) => {
       
     const setSearchQuery=(data)=>{
         const filteredTickets = momentdata.filter(ticket =>
-            // ticket.topic.toLowerCase().includes(data.toLowerCase())  //||
-            // ticket.ticket_type.toLowerCase().includes(data.toLowerCase()) //||
-            ticket.assignedTo.toLowerCase().includes(data.toLowerCase())
+            ticket.topic.toLowerCase().includes(data.toLowerCase())  ||
+            ticket.ticket_type.toLowerCase().includes(data.toLowerCase()) //||
+            // ticket.assignedTo.toLowerCase().includes(data.toLowerCase())
         )
         setMomentdata(filteredTickets)
     }
