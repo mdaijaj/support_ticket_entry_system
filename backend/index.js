@@ -10,7 +10,7 @@ app.use(express.static(__dirname));
 app.use(cookieParser());
 
 app.use(cors({
-    origin: ["https://support-ticket-entry-system-two.vercel.app"],
+    origin: [""],
     method: ["Post", "Get", "Put"],
     credentials: true
 }));
