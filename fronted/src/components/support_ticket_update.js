@@ -10,6 +10,7 @@ const SupportTicketUpdate = () => {
   const [userdata, setUserdata] = useState();
   const [ticketdata, setTicketdata] = useState();
   const [agent, setAgent] = useState([]);
+  const baseUrl="https://support-ticket-entry-system-two.vercel.app"
 
   const navigate = useNavigate();
   let { id } = useParams()
@@ -34,7 +35,7 @@ const SupportTicketUpdate = () => {
         topic, assignedTo, severity_level,ticket_type,status,description
       }),
     };
-    const result = await axios.put(`/api/editTicketDetails/${id}`, regInf);
+    const result = await axios.put(`${baseUrl}/api/editTicketDetails/${id}`, regInf);
     if (result.data.result.status === 400 || !result.data.result.status) {
       toast.info("Invalid user details", { autoClose: 1500 });
     } else {
@@ -44,13 +45,13 @@ const SupportTicketUpdate = () => {
   };
 
   const agentList= async()=>{
-    const response = await axios.get('/api/getagentList');
+    const response = await axios.get(`${baseUrl}/api/getagentList`);
     let filterData = await response.data.data
     setAgent(filterData)
   }
 
   const supportTicketDetails= async(id)=>{
-    const response = await axios.get(`/api/supportTicketDetails/${id}`);
+    const response = await axios.get(`${baseUrl}/api/supportTicketDetails/${id}`);
     let filterData = await response.data.data
     setTicketdata(filterData)
   }

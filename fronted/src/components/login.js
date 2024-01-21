@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const Login = () => {
     const [userdata, setUserdata] = useState();
     const navigate = useNavigate()
+    const baseUrl="https://support-ticket-entry-system-two.vercel.app"
     let name, value;
 
 
@@ -33,7 +34,7 @@ const Login = () => {
                 password
             })
         }
-        const res = await fetch("https://support-ticket-entry-system-two.vercel.app/api/signin", regInf);
+        const res = await fetch(`${baseUrl}/api/signin`, regInf);
         const result = await res.json()
         console.log("result", result)
         localStorage.setItem("user", JSON.stringify(result.userInfo))

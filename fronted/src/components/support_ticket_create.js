@@ -9,7 +9,7 @@ import axios from "axios";
 const SupportTicketCreate = () => {
   const [userdata, setUserdata] = useState();
   const [agent, setAgent] = useState([]);
-
+  const baseUrl="https://support-ticket-entry-system-two.vercel.app";
   const navigate = useNavigate();
 
   let name, value;
@@ -32,7 +32,7 @@ const SupportTicketCreate = () => {
         topic, assignedTo, severity_level,ticket_type,status,description
       }),
     };
-    const res = await fetch("https://support-ticket-entry-system-two.vercel.app/api/createSupportTicket", regInf);
+    const res = await fetch(`${baseUrl}/api/createSupportTicket`, regInf);
     const result = await res.json();
     console.log("result", result);
     if (result.status === 400 || !result) {
@@ -44,7 +44,7 @@ const SupportTicketCreate = () => {
   };
 
   const agentList= async()=>{
-    const response = await axios.get('/api/getagentList');
+    const response = await axios.get(`${baseUrl}/api/getagentList`);
     let filterData = await response.data.data
     setAgent(filterData)
   }

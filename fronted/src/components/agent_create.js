@@ -7,6 +7,7 @@ const AgentPage = () => {
     const [agentdata, setAgentdata] = useState();
     const navigate = useNavigate()
     let name, value;
+    let baseUrl = "https://support-ticket-entry-system-two.vercel.app"
 
 
     const handleInput = (e) => {
@@ -26,7 +27,6 @@ const AgentPage = () => {
             description
         } = agentdata;
 
-        let baseurl = "https://support-ticket-entry-system-two.vercel.app/api/create_agentdetails"
         const regInf = {
             method: "Post",
             headers: {
@@ -41,7 +41,7 @@ const AgentPage = () => {
                 description
             })
         }
-        const res = await fetch(baseurl, regInf);
+        const res = await fetch(`${baseUrl}/api/create_agentdetails`, regInf);
         const result = await res.json()
         console.log("result", result)
         localStorage.setItem("user", JSON.stringify(result))

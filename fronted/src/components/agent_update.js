@@ -9,6 +9,7 @@ const UpdateAgentDetails = () => {
     const navigate = useNavigate()
     const { id } = useParams()
     let name, value;
+    let baseUrl="https://support-ticket-entry-system-two.vercel.app";
 
 
     const handleInput = (e) => {
@@ -27,7 +28,6 @@ const UpdateAgentDetails = () => {
             agent_name
               } = userdata;
 
-        let baseurl=`https://support-ticket-entry-system-two.vercel.app/api/editUserDetails/:${id}`
         const regInf = {
             method: "PUT",
             headers: {
@@ -41,7 +41,7 @@ const UpdateAgentDetails = () => {
                 agent_name
             })
         }
-        const res = await fetch(baseurl, regInf);
+        const res = await fetch(`${baseUrl}/api/editUserDetails/:${id}`, regInf);
         const result = await res.json()
         console.log("result", result)
         if (res.status === 400 || !res) {
@@ -55,8 +55,7 @@ const UpdateAgentDetails = () => {
 
 
     const getUserDetails=  async(id)=>{
-        let baseurl=`https://support-ticket-entry-system-two.vercel.app/api/getUserDetails/${id}`
-        const res = await fetch(baseurl);
+        const res = await fetch(`${baseUrl}/api/getUserDetails/${id}`);
         const result = await res.json()
         console.log("result", result)
         let userdata= result.data

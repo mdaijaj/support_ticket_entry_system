@@ -9,6 +9,7 @@ import Loader from "./loader";
 const SupportTicketDetails = () => {
   const [achievementList, setAchievementList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const baseUrl="https://support-ticket-entry-system-two.vercel.app";
 
   //pagination functionality
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,18 +19,20 @@ const SupportTicketDetails = () => {
   const records = achievementList.slice(firstIndex, lastIndex);
   const nPage = Math.ceil(achievementList.length / recordPerPage);
   const numbers = [...Array(nPage + 1).keys()].slice(1);
+  
 
   const [results, setResults] = useState(records);
   const navigate = useNavigate();
 
   const UserList = async () => {
-    const response = await axios.get("https://support-ticket-entry-system-two.vercel.app/api/getagentList");
+    const response = await axios.get(`${baseUrl}/api/getagentList`);
     let filterData = await response.data.data;
     setAchievementList(filterData);
+
   };
 
   const deleteTicket = async (id) => {
-    await fetch(`https://support-ticket-entry-system-two.vercel.app/api/deleteTicket/${id}`);
+    await fetch(`${baseUrl}/api/deleteTicket/${id}`);
     toast.warning("delete successfully", { autoClose: 2000 });
     UserList();
   };

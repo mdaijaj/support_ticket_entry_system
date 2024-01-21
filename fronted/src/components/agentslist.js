@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 import '../App.css'
 import Loader from './loader'
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const Agent_List = (props) => {
     const [isLoading, setIsLoading] = useState(true);
     const [momentdata, setMomentdata]=useState([])
     const navigate = useNavigate()
+    const baseUrl="https://support-ticket-entry-system-two.vercel.app";
 
 
     //pagination functionality
@@ -22,7 +23,7 @@ const Agent_List = (props) => {
 
 
     const allUserList = async () => {
-      const response = await axios.get('https://support-ticket-entry-system-two.vercel.app/api/supportTicketList');
+      const response = await axios.get(`${baseUrl}/api/supportTicketList`);
       let filterData = await response.data.data
       setMomentdata(filterData)
     }
@@ -30,6 +31,7 @@ const Agent_List = (props) => {
 
     const sortingFun= (data)=>{
     const sortedTickets = momentdata.slice().sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+        console.log("sortedTickets", sortedTickets)
        setMomentdata(sortedTickets)
     }
 
@@ -51,8 +53,8 @@ const Agent_List = (props) => {
       
     const setSearchQuery=(data)=>{
         const filteredTickets = momentdata.filter(ticket =>
-            ticket.topic.toLowerCase().includes(data.toLowerCase())  ||
-            ticket.ticket_type.toLowerCase().includes(data.toLowerCase()) ||
+            // ticket.topic.toLowerCase().includes(data.toLowerCase())  //||
+            // ticket.ticket_type.toLowerCase().includes(data.toLowerCase()) //||
             ticket.assignedTo.toLowerCase().includes(data.toLowerCase())
         )
         setMomentdata(filteredTickets)
