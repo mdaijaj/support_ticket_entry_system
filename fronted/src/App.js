@@ -2,11 +2,11 @@ import './App.css';
 import Navbar from './components/navbar'
 import "./style.css";
 import Routing from './components/menubar';
-import axios from "axios";
+// import axios from "axios";
 
 const App=()=> {
 
-  axios.defaults.withCredentials= true;
+  // axios.defaults.withCredentials= true;
 
   return (
     <>
