@@ -2,7 +2,6 @@
   "name": "sopport-ticket-system",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://support-ticket-entry-system-two.vercel.app",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",

@@ -22,7 +22,7 @@ const Agent_List = (props) => {
 
 
     const allUserList = async () => {
-      const response = await axios.get('/api/supportTicketList');
+      const response = await axios.get('https://support-ticket-entry-system-two.vercel.app/api/supportTicketList');
       let filterData = await response.data.data
       setMomentdata(filterData)
     }

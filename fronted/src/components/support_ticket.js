@@ -23,13 +23,13 @@ const SupportTicketDetails = () => {
   const navigate = useNavigate();
 
   const UserList = async () => {
-    const response = await axios.get("/api/getagentList");
+    const response = await axios.get("https://support-ticket-entry-system-two.vercel.app/api/getagentList");
     let filterData = await response.data.data;
     setAchievementList(filterData);
   };
 
   const deleteTicket = async (id) => {
-    await fetch(`/api/deleteTicket/${id}`);
+    await fetch(`https://support-ticket-entry-system-two.vercel.app/api/deleteTicket/${id}`);
     toast.warning("delete successfully", { autoClose: 2000 });
     UserList();
   };

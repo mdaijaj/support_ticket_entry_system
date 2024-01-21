@@ -26,9 +26,9 @@ const AgentPage = () => {
             description
         } = agentdata;
 
-        let baseurl = "/api/create_agentdetails"
+        let baseurl = "https://support-ticket-entry-system-two.vercel.app/api/create_agentdetails"
         const regInf = {
-            method: "POST",
+            method: "Post",
             headers: {
                 "Content-Type": "application/json"
             },

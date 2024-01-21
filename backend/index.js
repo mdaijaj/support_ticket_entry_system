@@ -11,7 +11,7 @@ app.use(cookieParser());
 
 app.use(cors({
     origin: ["https://support-ticket-entry-system-two.vercel.app"],
-    method: ["POST", "GET", "PUT"],
+    method: ["Post", "Get", "Put"],
     credentials: true
 }));
 

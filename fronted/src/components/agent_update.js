@@ -27,7 +27,7 @@ const UpdateAgentDetails = () => {
             agent_name
               } = userdata;
 
-        let baseurl=`/api/editUserDetails/:${id}`
+        let baseurl=`https://support-ticket-entry-system-two.vercel.app/api/editUserDetails/:${id}`
         const regInf = {
             method: "PUT",
             headers: {
@@ -55,7 +55,7 @@ const UpdateAgentDetails = () => {
 
 
     const getUserDetails=  async(id)=>{
-        let baseurl=`/api/getUserDetails/${id}`
+        let baseurl=`https://support-ticket-entry-system-two.vercel.app/api/getUserDetails/${id}`
         const res = await fetch(baseurl);
         const result = await res.json()
         console.log("result", result)

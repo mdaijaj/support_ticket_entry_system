@@ -24,7 +24,7 @@ const SupportTicketCreate = () => {
     const { topic, assignedTo, severity_level,ticket_type,status,description } = userdata;
 
     const regInf = {
-      method: "POST",
+      method: "Post",
       headers: {
         "Content-Type": "application/json",
       },
@@ -32,7 +32,7 @@ const SupportTicketCreate = () => {
         topic, assignedTo, severity_level,ticket_type,status,description
       }),
     };
-    const res = await fetch("/api/createSupportTicket", regInf);
+    const res = await fetch("https://support-ticket-entry-system-two.vercel.app/api/createSupportTicket", regInf);
     const result = await res.json();
     console.log("result", result);
     if (result.status === 400 || !result) {

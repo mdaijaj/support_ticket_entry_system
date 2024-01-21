@@ -24,7 +24,7 @@ const Login = () => {
 
         // let baseurl = "httpapi/signin"
         const regInf = {
-            method: "POST",
+            method: "Post",
             headers: {
                 "Content-Type": "application/json"
             },
@@ -33,7 +33,7 @@ const Login = () => {
                 password
             })
         }
-        const res = await fetch("/api/signin", regInf);
+        const res = await fetch("https://support-ticket-entry-system-two.vercel.app/api/signin", regInf);
         const result = await res.json()
         console.log("result", result)
         localStorage.setItem("user", JSON.stringify(result.userInfo))
