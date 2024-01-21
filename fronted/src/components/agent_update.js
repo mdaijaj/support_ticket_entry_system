@@ -29,7 +29,7 @@ const UpdateAgentDetails = () => {
 
         let baseurl=`/api/editUserDetails/:${id}`
         const regInf = {
-            method: "Put",
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },

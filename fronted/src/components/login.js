@@ -24,7 +24,7 @@ const Login = () => {
 
         // let baseurl = "httpapi/signin"
         const regInf = {
-            method: "Post",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },

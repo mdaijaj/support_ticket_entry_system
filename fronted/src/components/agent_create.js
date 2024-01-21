@@ -28,7 +28,7 @@ const AgentPage = () => {
 
         let baseurl = "/create_agentdetails"
         const regInf = {
-            method: "Post",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },

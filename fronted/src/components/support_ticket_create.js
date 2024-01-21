@@ -24,7 +24,7 @@ const SupportTicketCreate = () => {
     const { topic, assignedTo, severity_level,ticket_type,status,description } = userdata;
 
     const regInf = {
-      method: "Post",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },

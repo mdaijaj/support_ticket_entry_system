@@ -26,7 +26,7 @@ const SupportTicketUpdate = () => {
     const { topic, assignedTo, severity_level,ticket_type,status,description } = userdata;
 
     const regInf = {
-      method: "Put",
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
