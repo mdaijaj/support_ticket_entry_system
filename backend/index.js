@@ -16,9 +16,9 @@ app.use(cors({
 }));
 
 
-app.get("/test", (req, res)=>{
+app.get("/", (req, res)=>{
     console.log("api is calling")
-    return res.send({message: "api is calling for testing.."})
+    return res.send({message: "api is calling for testing..", data: []})
 })
 
 let routes=require('./route/index')
