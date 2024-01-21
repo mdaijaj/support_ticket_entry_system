@@ -26,7 +26,7 @@ const AgentPage = () => {
             description
         } = agentdata;
 
-        let baseurl = "http://localhost:5000/api/create_agentdetails"
+        let baseurl = "/create_agentdetails"
         const regInf = {
             method: "Post",
             headers: {

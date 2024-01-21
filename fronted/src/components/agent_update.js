@@ -27,7 +27,7 @@ const UpdateAgentDetails = () => {
             agent_name
               } = userdata;
 
-        let baseurl=`http://localhost:5000/api/editUserDetails/:${id}`
+        let baseurl=`/api/editUserDetails/:${id}`
         const regInf = {
             method: "Put",
             headers: {
@@ -55,7 +55,7 @@ const UpdateAgentDetails = () => {
 
 
     const getUserDetails=  async(id)=>{
-        let baseurl=`http://localhost:5000/api/getUserDetails/${id}`
+        let baseurl=`/api/getUserDetails/${id}`
         const res = await fetch(baseurl);
         const result = await res.json()
         console.log("result", result)
